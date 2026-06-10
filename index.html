@@ -143,6 +143,8 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-b
 .nav-links a{font-size:14px;color:var(--muted);transition:color .15s}
 .nav-links a:hover{color:var(--navy)}
 .btn-nav{background:var(--orange);color:#fff!important;padding:9px 20px;border-radius:5px;font-size:13px;font-weight:700;letter-spacing:.04em}
+.nav-cta{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.nav-cta .btn-nav{font-size:12px;padding:8px 14px}
 
 /* ── BUTTONS ───────────────────────────────────────────────── */
 .btn{display:inline-block;padding:14px 28px;border-radius:5px;font-size:14px;font-weight:700;letter-spacing:.04em;cursor:pointer;transition:opacity .15s}
@@ -295,6 +297,9 @@ footer{background:#0D1A25;padding:40px 0}
   .hero-inner,.pillars,.rules-grid,.formats,.reveal-grid,.transform-grid,.cta-split,.results-grid,.problems-grid{grid-template-columns:1fr}
   .nav-links{display:none}
   .hamburger{display:flex}
+  .nav-cta .btn-nav:last-child{display:none}
+  .nav-cta{gap:4px}
+  .nav-cta .btn-nav{font-size:10px;padding:7px 9px;letter-spacing:.02em}
   nav{position:sticky;top:0;z-index:100}
   .section{padding:56px 0}
   .hero{padding:64px 0 56px}
@@ -485,7 +490,11 @@ footer{background:#0D1A25;padding:40px 0}
       <a href="#book">The Book</a>
       <a href="#enterprise">For Teams</a>
       <a href="#training">Training</a>
-      <a href="#quiz" class="btn-nav" style="margin-left:8px">Self-Assessment</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#quiz" class="btn-nav">Map Your Profile</a>
+      <a href="https://a.co/d/08HlbvCn" class="btn-nav" style="background:var(--orange)" target="_blank" rel="noopener noreferrer">Get the Book</a>
+      <a href="#training" class="btn-nav" style="background:var(--navy)">Explore Training</a>
     </div>
     <button class="hamburger" onclick="toggleMobileNav()" id="hamburgerBtn" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -497,7 +506,7 @@ footer{background:#0D1A25;padding:40px 0}
     <a href="#book" onclick="closeMobileNav()">The Book</a>
     <a href="#enterprise" onclick="closeMobileNav()">For Teams</a>
     <a href="#training" onclick="closeMobileNav()">Training</a>
-    <a href="#quiz" class="btn-nav" onclick="closeMobileNav()">Self-Assessment</a>
+    <a href="#quiz" onclick="closeMobileNav()">Map Your Profile</a>
   </div>
 </nav>
 
@@ -527,22 +536,10 @@ footer{background:#0D1A25;padding:40px 0}
             <p><strong>Lift Your Relations</strong> - Lead through influence, manage upward, and build trust that lasts</p>
           </div>
         </div>
-        <div class="btn-pair">
-          <a href="#book" class="btn btn--orange">Get the Book</a>
-          <a href="#training" class="btn btn--outline">Explore Training</a>
-        </div>
+
       </div>
       <div class="hero-visual">
-        <div class="hero-card">
-          <div class="hero-card-rule">Rule #13</div>
-          <div class="hero-card-title">Prioritize Means Give Up</div>
-          <div class="hero-card-body">When you add a priority without removing another, you haven't prioritized. You've just added pressure to a system that's already at capacity.</div>
-          <div class="hero-card-bottom">
-            <span class="hero-card-tag" style="background:#EAF3FB;color:#2F80ED">Lift Your Methods</span>
-            <span class="hero-card-num">13</span>
-          </div>
-        </div>
-        <div class="hero-stat" style="padding:20px 4px 0">
+        <div class="hero-stat" style="padding:0">
           <div class="stat-item">
             <div class="stat-num">32</div>
             <div class="stat-label">Unwritten rules</div>
@@ -561,35 +558,72 @@ footer{background:#0D1A25;padding:40px 0}
   </div>
 </section>
 
-<!-- ══ SHOW / HIDE ════════════════════════════════════════════════ -->
-<section class="section section--grey">
+<section class="quiz-section" id="quiz">
   <div class="container">
-    <span class="label">Strategic transparency</span>
-    <div class="orange-dash"></div>
-    <h2 style="max-width:520px">What we share. What we save for the room.</h2>
-    <p class="lead" style="margin-top:16px;max-width:580px">The book gives you the map. The training puts you in the terrain. Here's the difference - deliberately designed.</p>
-    <div class="reveal-grid">
-      <div class="reveal-cell reveal-cell--show">
-        <div class="reveal-cell-label">What you discover in the book</div>
-        <div class="reveal-item"><div class="reveal-dot" style="background:var(--green)"></div><p>The name and principle of all 32 rules</p></div>
-        <div class="reveal-item"><div class="reveal-dot" style="background:var(--green)"></div><p>Real stories from 25 years in the field</p></div>
-        <div class="reveal-item"><div class="reveal-dot" style="background:var(--green)"></div><p>The 3-pillar framework and how it connects</p></div>
-        <div class="reveal-item"><div class="reveal-dot" style="background:var(--green)"></div><p>One concrete action per rule</p></div>
-        <div class="reveal-item"><div class="reveal-dot" style="background:var(--green)"></div><p>The logic behind each behavioral shift</p></div>
+    <!-- INTRO -->
+    <div id="quizIntro">
+      <div class="quiz-intro">
+        <span class="label en-only">Map Your Profile</span>
+        <div class="orange-dash orange-dash--center"></div>
+        <h2>Discover your professional habits profile</h2>
+        <p>50 situational questions. No right or wrong answers. A personal radar across all 32 LIFT dimensions - sent directly to you at the end.</p>
+        <div class="quiz-meta">
+          <div class="quiz-meta-item"><div class="quiz-meta-num">50</div><div class="quiz-meta-label">Situations</div></div>
+          <div class="quiz-meta-item"><div class="quiz-meta-num">~14</div><div class="quiz-meta-label">Minutes</div></div>
+          <div class="quiz-meta-item"><div class="quiz-meta-num">32</div><div class="quiz-meta-label">Areas mapped</div></div>
+          <div class="quiz-meta-item"><div class="quiz-meta-num">/10</div><div class="quiz-meta-label">Score scale</div></div>
+        </div>
+        <div class="quiz-name-wrap">
+          <label for="qzName">Your first name</label>
+          <input type="text" id="qzName" class="quiz-name-input" placeholder="Your name" autocomplete="off">
+        </div>
+        <div class="quiz-name-wrap">
+          <label for="qzEmail">Your email address <span style="color:var(--orange)">*</span></label>
+          <input type="email" id="qzEmail" class="quiz-name-input" placeholder="your@email.com" autocomplete="off">
+        </div>
+        <div class="quiz-name-wrap">
+          <label for="qzEmail2">Confirm your email <span style="color:var(--orange)">*</span></label>
+          <input type="email" id="qzEmail2" class="quiz-name-input" placeholder="your@email.com" autocomplete="off">
+        </div>
+        <div id="qzEmailError" style="color:#E53935;font-size:13px;margin-bottom:8px;display:none">&#9888; Emails do not match - please check and try again.</div>
+        <div class="quiz-name-wrap">
+          <label for="qzSession"><span>Session name <span style="font-weight:400;color:var(--muted)">- type &quot;Independent&quot; if not part of a training session</span></span></label>
+          <input type="text" id="qzSession" class="quiz-name-input" placeholder="e.g. LIFT Workshop March 2026 / Independent" autocomplete="off">
+        </div>
+        <div class="quiz-start-wrap">
+          <button class="btn btn--orange" onclick="qzStart()"><span>Start the assessment</span> &rarr;</button>
+        </div>
+        <div class="quiz-disclaimer">Your results are personal and shared only with the session facilitator.</div>
       </div>
-      <div class="reveal-cell reveal-cell--hide">
-        <div class="reveal-cell-label">What lives in the training</div>
-        <div class="reveal-item"><div class="reveal-dot" style="background:var(--orange)"></div><p>The felt experience of applying each rule under pressure</p></div>
-        <div class="reveal-item"><div class="reveal-dot" style="background:var(--orange)"></div><p>Live diagnostic of your specific gap profile</p></div>
-        <div class="reveal-item"><div class="reveal-dot" style="background:var(--orange)"></div><p>Real-time feedback from peers on your actual challenges</p></div>
-        <div class="reveal-item"><div class="reveal-dot" style="background:var(--orange)"></div><p>The rule combinations that unlock your specific bottleneck</p></div>
-        <div class="reveal-item"><div class="reveal-dot" style="background:var(--orange)"></div><p>A public commitment you make - and are held to</p></div>
+    </div>
+
+    <!-- PROGRESS BAR -->
+    <div class="qz-progress-row" id="qzProgressRow" style="display:none">
+      <div class="qz-pbar-wrap"><div class="qz-pbar-fill" id="qzPbar" style="width:0%"></div></div>
+      <div class="qz-counter" id="qzCounter">0 / 50</div>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div id="quizArea"></div>
+
+    <!-- RESULTS -->
+    <div id="qzResults">
+      <div class="qzr-header">
+        <div class="qzr-name" id="qzrName"></div>
+        <h3>Your Professional Habits Profile</h3>
+        <p>These scores reflect your self-reported patterns. Use them as a starting point - not a verdict.</p>
+      </div>
+      <div id="qzrBody"></div>
+      <div id="qzrSending" class="qzr-sending" style="display:none">Sending your results...</div>
+      <div id="qzSentBadge" style="display:none;text-align:center;margin-bottom:16px"><span style="display:inline-block;background:#EAF7EF;border:1px solid #C0DD97;color:#27AE60;font-size:12px;font-weight:700;padding:6px 16px;border-radius:20px;letter-spacing:.04em">&#10003; Results saved</span></div>
+    <div class="qzr-reset-wrap" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn-qzr-reset" onclick="qzDownloadPDF()" style="background:#1C2D3E;color:#fff;border-color:#1C2D3E">&#11015; Download PDF Report</button>
+        <button class="btn-qzr-reset" onclick="qzReset()">&#8592; Take the assessment again</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ METHOD ═════════════════════════════════════════════════════ -->
 <section class="section" id="method">
   <div class="container">
     <div class="method-header">
@@ -633,7 +667,6 @@ footer{background:#0D1A25;padding:40px 0}
   </div>
 </section>
 
-<!-- ══ RULES TEASER ═══════════════════════════════════════════════ -->
 <section class="section section--grey" id="rules">
   <div class="container">
     <!-- ══ 32 RULES INTERCONNECTION MAP ══════════════════════════ -->
@@ -818,8 +851,6 @@ footer{background:#0D1A25;padding:40px 0}
   </div>
 </section>
 
-
-<!-- ══ BOOK ════════════════════════════════════════════════════ -->
 <section class="book-section" id="book">
   <div class="book-inner">
     <!-- Visual -->
@@ -853,7 +884,6 @@ footer{background:#0D1A25;padding:40px 0}
   </div>
 </section>
 
-<!-- ══ ENTERPRISE ════════════════════════════════════════════════ -->
 <section class="section section--dark" id="enterprise">
   <div class="container">
     <span class="label label--white">For managers & organizations</span>
@@ -880,14 +910,37 @@ footer{background:#0D1A25;padding:40px 0}
         <div class="result-label">Full transformation cycle with structured action plan and accountability</div>
       </div>
     </div>
-    <div style="margin-top:40px">
-      <button onclick="openModal('teamModal')" class="btn btn--orange">Request a Team Session</button>
-      <button onclick="downloadBrochure()" style="margin-left:14px;background:transparent;border:2px solid #fff;color:#fff;padding:14px 28px;border-radius:5px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.04em;transition:all .2s" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='transparent'">&#11015; Download the Executive Brochure</button>
+    
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container">
+    <span class="label">Strategic transparency</span>
+    <div class="orange-dash"></div>
+    <h2 style="max-width:520px">What we share. What we save for the room.</h2>
+    <p class="lead" style="margin-top:16px;max-width:580px">The book gives you the map. The training puts you in the terrain. Here's the difference - deliberately designed.</p>
+    <div class="reveal-grid">
+      <div class="reveal-cell reveal-cell--show">
+        <div class="reveal-cell-label">What you discover in the book</div>
+        <div class="reveal-item"><div class="reveal-dot" style="background:var(--green)"></div><p>The name and principle of all 32 rules</p></div>
+        <div class="reveal-item"><div class="reveal-dot" style="background:var(--green)"></div><p>Real stories from 25 years in the field</p></div>
+        <div class="reveal-item"><div class="reveal-dot" style="background:var(--green)"></div><p>The 3-pillar framework and how it connects</p></div>
+        <div class="reveal-item"><div class="reveal-dot" style="background:var(--green)"></div><p>One concrete action per rule</p></div>
+        <div class="reveal-item"><div class="reveal-dot" style="background:var(--green)"></div><p>The logic behind each behavioral shift</p></div>
+      </div>
+      <div class="reveal-cell reveal-cell--hide">
+        <div class="reveal-cell-label">What lives in the training</div>
+        <div class="reveal-item"><div class="reveal-dot" style="background:var(--orange)"></div><p>The felt experience of applying each rule under pressure</p></div>
+        <div class="reveal-item"><div class="reveal-dot" style="background:var(--orange)"></div><p>Live diagnostic of your specific gap profile</p></div>
+        <div class="reveal-item"><div class="reveal-dot" style="background:var(--orange)"></div><p>Real-time feedback from peers on your actual challenges</p></div>
+        <div class="reveal-item"><div class="reveal-dot" style="background:var(--orange)"></div><p>The rule combinations that unlock your specific bottleneck</p></div>
+        <div class="reveal-item"><div class="reveal-dot" style="background:var(--orange)"></div><p>A public commitment you make - and are held to</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══ TRAINING ══════════════════════════════════════════════════ -->
 <section class="section" id="training">
   <div class="container">
     <span class="label en-only">The LIFT Training Program</span>
@@ -964,72 +1017,8 @@ footer{background:#0D1A25;padding:40px 0}
 </div>
 
 
-<!-- ══ QUIZ ═════════════════════════════════════════════════════ -->
-<section class="quiz-section" id="quiz">
-  <div class="container">
-    <!-- INTRO -->
-    <div id="quizIntro">
-      <div class="quiz-intro">
-        <span class="label en-only">Pre-session self-assessment</span>
-        <div class="orange-dash orange-dash--center"></div>
-        <h2>Discover your professional habits profile</h2>
-        <p>50 situational questions. No right or wrong answers. A personal radar across all 32 LIFT dimensions - sent directly to you at the end.</p>
-        <div class="quiz-meta">
-          <div class="quiz-meta-item"><div class="quiz-meta-num">50</div><div class="quiz-meta-label">Situations</div></div>
-          <div class="quiz-meta-item"><div class="quiz-meta-num">~14</div><div class="quiz-meta-label">Minutes</div></div>
-          <div class="quiz-meta-item"><div class="quiz-meta-num">32</div><div class="quiz-meta-label">Areas mapped</div></div>
-          <div class="quiz-meta-item"><div class="quiz-meta-num">/10</div><div class="quiz-meta-label">Score scale</div></div>
-        </div>
-        <div class="quiz-name-wrap">
-          <label for="qzName">Your first name</label>
-          <input type="text" id="qzName" class="quiz-name-input" placeholder="Your name" autocomplete="off">
-        </div>
-        <div class="quiz-name-wrap">
-          <label for="qzEmail">Your email address <span style="color:var(--orange)">*</span></label>
-          <input type="email" id="qzEmail" class="quiz-name-input" placeholder="your@email.com" autocomplete="off">
-        </div>
-        <div class="quiz-name-wrap">
-          <label for="qzEmail2">Confirm your email <span style="color:var(--orange)">*</span></label>
-          <input type="email" id="qzEmail2" class="quiz-name-input" placeholder="your@email.com" autocomplete="off">
-        </div>
-        <div id="qzEmailError" style="color:#E53935;font-size:13px;margin-bottom:8px;display:none">&#9888; Emails do not match - please check and try again.</div>
-        <div class="quiz-name-wrap">
-          <label for="qzSession"><span>Session name <span style="font-weight:400;color:var(--muted)">- type &quot;Independent&quot; if not part of a training session</span></span></label>
-          <input type="text" id="qzSession" class="quiz-name-input" placeholder="e.g. LIFT Workshop March 2026 / Independent" autocomplete="off">
-        </div>
-        <div class="quiz-start-wrap">
-          <button class="btn btn--orange" onclick="qzStart()"><span>Start the assessment</span> &rarr;</button>
-        </div>
-        <div class="quiz-disclaimer">Your results are personal and shared only with the session facilitator.</div>
-      </div>
-    </div>
 
-    <!-- PROGRESS BAR -->
-    <div class="qz-progress-row" id="qzProgressRow" style="display:none">
-      <div class="qz-pbar-wrap"><div class="qz-pbar-fill" id="qzPbar" style="width:0%"></div></div>
-      <div class="qz-counter" id="qzCounter">0 / 50</div>
-    </div>
 
-    <!-- QUESTIONS -->
-    <div id="quizArea"></div>
-
-    <!-- RESULTS -->
-    <div id="qzResults">
-      <div class="qzr-header">
-        <div class="qzr-name" id="qzrName"></div>
-        <h3>Your Professional Habits Profile</h3>
-        <p>These scores reflect your self-reported patterns. Use them as a starting point - not a verdict.</p>
-      </div>
-      <div id="qzrBody"></div>
-      <div id="qzrSending" class="qzr-sending" style="display:none">Sending your results...</div>
-      <div id="qzSentBadge" style="display:none;text-align:center;margin-bottom:16px"><span style="display:inline-block;background:#EAF7EF;border:1px solid #C0DD97;color:#27AE60;font-size:12px;font-weight:700;padding:6px 16px;border-radius:20px;letter-spacing:.04em">&#10003; Results saved</span></div>
-    <div class="qzr-reset-wrap" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <button class="btn-qzr-reset" onclick="qzDownloadPDF()" style="background:#1C2D3E;color:#fff;border-color:#1C2D3E">&#11015; Download PDF Report</button>
-        <button class="btn-qzr-reset" onclick="qzReset()">&#8592; Take the assessment again</button>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- ══ FOOTER ═════════════════════════════════════════════════════ -->
 <footer>
   <div class="container">
